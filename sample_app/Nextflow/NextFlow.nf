@@ -14,6 +14,6 @@ process personalize {
     file "output" into res_ch
 
     """
-    permedcoe execute building_block bb $csv output $conf
+    permedcoe execute building_block sample_BB -i $csv -o output -c $conf
     """
 }

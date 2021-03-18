@@ -5,4 +5,4 @@ rule personalize:
     output:
         directory("output")
     shell:
-        "permedcoe execute building_block bb {input.data} {output} {input.config}"
+        "permedcoe execute building_block sample_BB -i {input.data} -o {output} -c {input.config}"

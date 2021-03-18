@@ -3,8 +3,8 @@
 # To set global building block debug mode
 from permedcoe import set_debug
 # Import building block entry points
-from bb import invoke
-from bb import personalize_model_bb_extended
+from sample_BB import invoke
+from sample_BB import personalize_model_bb_extended
 
 
 def main():

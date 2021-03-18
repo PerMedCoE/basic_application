@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+import os
 
 from permedcoe import Container        # To define container related needs
 from permedcoe import Binary           # To define binary to execute related needs
@@ -19,7 +20,7 @@ from permedcoe import get_environment  # Get variables from invocation
 #          by the package.
 #          Alternative: we could agree a common path where the definitions have to be
 #          placed, and use an environment variable.
-SAMPLE_CONTAINER = "/home/javier/gitlab/projects/permedcoe/sample_BB/image/PerMedCoE-Pilot.sif"
+SAMPLE_CONTAINER = str(os.environ["HOME"]) + "/github/projects/PerMedCoE/basic_application/sample_BB/image/PerMedCoE-Pilot.sif"
 
 
 ########################################################
