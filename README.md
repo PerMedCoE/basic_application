@@ -36,7 +36,6 @@ This repository contains a sample application using a single Building Block (BB)
   cd ..
   ```
 
-
 ### 2<sup>nd</sup> - Download the `sample_BB` package
 
   ```shell
