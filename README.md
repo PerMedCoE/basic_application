@@ -13,8 +13,10 @@ This repository contains a sample application using a single Building Block (BB)
   - [Repository contents](#repository-contents)
   - [Usage](#usage)
     - [1<sup>st</sup> - Install `permedcoe` package](#1supstsup---install-permedcoe-package)
-    - [2<sup>nd</sup> - Install the `sample_BB` package](#2supndsup---install-the-sample_bb-package)
-    - [3<sup>rd</sup> - Execute one of the sample applications](#3suprdsup---execute-one-of-the-sample-applications)
+    - [2<sup>nd</sup> - Download the `sample_BB` package](#2supndsup---download-the-sample_bb-package)
+    - [3<sup>nd</sup> - Set the Singularity image in the `sample_BB` package](#3supndsup---set-the-singularity-image-in-the-sample_bb-package)
+    - [4<sup>nd</sup> - Install the `sample_BB` package](#4supndsup---install-the-sample_bb-package)
+    - [5<sup>rd</sup> - Execute one of the sample applications](#5suprdsup---execute-one-of-the-sample-applications)
   - [License](#license)
   - [Contact](#contact)
 
@@ -34,16 +36,31 @@ This repository contains a sample application using a single Building Block (BB)
   cd ..
   ```
 
-### 2<sup>nd</sup> - Install the `sample_BB` package
+
+### 2<sup>nd</sup> - Download the `sample_BB` package
 
   ```shell
   git clone https://github.com/PerMedCoE/basic_application.git
+  ```
+
+### 3<sup>nd</sup> - Set the Singularity image in the `sample_BB` package
+
+  ```shell
   cd basic_application/sample_BB
+  # Edit src/sample_BB/main.py
+  # Set the SAMPLE_CONTAINER variable:
+  #    It is currently set to: $HOME/github/projects/PerMedCoE/basic_application/sample_BB/image/PerMedCoE-Pilot.sif
+  #    And that path should be where the PerMedCoE-Pilot.sif file is.
+  ```
+
+### 4<sup>nd</sup> - Install the `sample_BB` package
+
+  ```shell
   ./install.sh
   cd ../..
   ```
 
-### 3<sup>rd</sup> - Execute one of the sample applications
+### 5<sup>rd</sup> - Execute one of the sample applications
 
 - **PyCOMPSs** sample application:
 
