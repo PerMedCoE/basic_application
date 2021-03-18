@@ -27,7 +27,7 @@ This repository contains a sample application using a single Building Block (BB)
 
 ### 1<sup>st</sup> - Install `permedcoe` package
 
-  ``` bash
+  ```shell
   git clone https://github.com/PerMedCoE/permedcoe.git
   cd permedcoe
   ./install.sh
@@ -36,7 +36,7 @@ This repository contains a sample application using a single Building Block (BB)
 
 ### 2<sup>nd</sup> - Install the `sample_BB` package
 
-  ``` bash
+  ```shell
   git clone https://github.com/PerMedCoE/basic_application.git
   cd basic_application/sample_BB
   ./install.sh
@@ -49,7 +49,7 @@ This repository contains a sample application using a single Building Block (BB)
 
   > NOTE: Requires PyCOMPSs installed in the machine.
 
-  ``` bash
+  ```shell
   cd basic_application/sample_app/PyCOMPSs
   ./launch.sh
   cd ../..
@@ -59,7 +59,7 @@ This repository contains a sample application using a single Building Block (BB)
 
   > NOTE: Requires Nextflow installed in the machine.
 
-  ``` bash
+  ```shell
   cd basic_application/sample_app/Nextflow
   ./launch.sh
   cd ../..
@@ -69,7 +69,7 @@ This repository contains a sample application using a single Building Block (BB)
 
   > NOTE: Requires Snakemake installed in the machine.
 
-  ``` bash
+  ```shell
   cd basic_application/sample_app/Snakemake
   ./launch.sh
   cd ../..

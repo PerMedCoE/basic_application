@@ -3,7 +3,7 @@
 ## Sample Building Block
 
 This package provides a **Building Block (BB)** example using the **HPC/Exascale Centre of Excellence in Personalised Medicine** (
-[PerMedCoE](https://permedcoe.eu/)) base Building Block.
+[PerMedCoE](https://permedcoe.eu/)) base Building Block ([permedcoe](https://github.com/PerMedCoE/permedcoe)).
 
 ## Table of Contents
 
@@ -34,15 +34,15 @@ There are two ways to install this package (from Pypi and manually):
 
 - From Pypi:
 
-  This package is NOT YET publicly available in Pypi:
+  This package is **NOT YET** publicly available in Pypi:
 
-  ```bash
+  ```shell
   pip install sample_BB
   ```
 
   or more specifically:
 
-  ```bash
+  ```shell
   python3 -m pip install sample_BB
   ```
 
@@ -50,7 +50,7 @@ There are two ways to install this package (from Pypi and manually):
 
   This package provides an automatic installation script, but it is necessary to install the `permedcoe` package before the `sample_BB` package since it is required by `sample_BB`.
 
-  ```bash
+  ```shell
   # Install permedcoe package
   cd ../PerMedCoE
   ./install.sh
@@ -98,22 +98,25 @@ The `sample_BB` package provides a clear interface that allows it to be used wit
 
   This interface can be used within any workflow manager that requires binaries (e.g. NextFlow and Snakemake).
 
-  In addition, it can be used with PyCOMPSs by importing the `invoke` function or any other specific for PyCOMPSs.
+  In addition, it can be used with PyCOMPSs by importing the decorated function or any other specific for PyCOMPSs.
 
   ```python
-  from sample_BB.sample import invoke
+  from sample_BB.sample import personalize_model_task
 
-  invoke(input, output, config)
+  personalize_model_task(suffix=suffix,
+                         model=model,
+                         mutations_dataset=input,
+                         output=output)
   ```
 
 - Extension for PyCOMPSs:
 
-  Moreover, a BB can also implement a Python function not limited to the input (file or directory), output (file or directory) and config (yaml file) signature. This enables application developers to use the BB with PyCOMPSs using Python objects instead of files among BBs.
+  Moreover, a BB can also implement a Python function not limited to the input (file/s or directory/ies), output (file/s or directory/ies) and config (yaml file) signature. This enables application developers to use the BB with PyCOMPSs using Python objects instead of files among BBs.
 
   ```python
-  from sample_BB.sample import sample_bb_extended
+  from sample_BB.sample import personalize_model_bb_extended
 
-  sample_bb_extended(*args, **kwargs)  # specific interface
+  personalize_model_bb_extended(*args, **kwargs)  # specific interface
   ```
 
 ### Uninstall
@@ -124,25 +127,25 @@ There are two ways to uninstall this package, that depends on the way that it wa
 
 - From Pypi:
 
-  ```bash
+  ```shell
   pip uninstall sample_BB
   ```
 
   or more specifically:
 
-  ```bash
+  ```shell
   python3 -m pip uninstall sample_BB
   ```
 
 - From manual installation (using `install.sh`):
 
-  ```bash
+  ```shell
   ./uninstall.sh
   ```
 
   And then the folder can be cleaned as well using the `clean.sh` script.
 
-  ```bash
+  ```shell
   ./clean.sh
   ```
 
@@ -206,10 +209,6 @@ There are a set of best practices suggested to BB developers:
 - Use a code style:
   - [pep8](https://www.python.org/dev/peps/pep-0008/)
   - [black](https://github.com/psf/black)
-
-- Container best practices:
-  - one
-  - two
 
 - Document your BB.
 
