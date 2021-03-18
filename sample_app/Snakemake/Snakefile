@@ -1,0 +1,8 @@
+rule personalize:
+    input:
+        data="../dataset/Fumia_META_mutCNA.csv",
+        config="../config/conf.yaml"
+    output:
+        directory("output")
+    shell:
+        "permedcoe execute building_block bb {input.data} {output} {input.config}"
