@@ -158,9 +158,9 @@ There are a set of rules to implement a PerMedCoE compliant Building Block:
 - Provide a executable Python script with the following structure:
 
   ```Python
-  from permedcoe import Container
-  from permedcoe import Binary
-  from permedcoe import Task
+  from permedcoe import container
+  from permedcoe import binary
+  from permedcoe import task
   from permedcoe import FILE_IN
   from permedcoe import FILE_OUT
   from permedcoe import DIRECTORY_IN
@@ -172,9 +172,9 @@ There are a set of rules to implement a PerMedCoE compliant Building Block:
       # Python code calling to tasks (see PyCOMPSs)
       ...
 
-  @Container(engine="SINGULARITY", image=CONTAINER)
-  @Binary(binary="/path/to/binary")
-  @Task(dataset=FILE_IN, output=FILE_OUT)
+  @container(engine="SINGULARITY", image=CONTAINER)
+  @binary(binary="/path/to/binary")
+  @task(dataset=FILE_IN, output=FILE_OUT)
   def sample_bb_task(dataset_flag="-d", dataset=None,
                       output_flag="-o", output, ...):
       # Equivalent to:

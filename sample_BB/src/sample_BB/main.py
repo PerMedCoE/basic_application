@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 import os
 
-from permedcoe import Container        # To define container related needs
-from permedcoe import Binary           # To define binary to execute related needs
-from permedcoe import Task             # To define task related needs
+from permedcoe import container        # To define container related needs
+from permedcoe import binary           # To define binary to execute related needs
+from permedcoe import task             # To define task related needs
 
 from permedcoe import FILE_IN          # To define file type and direction
 from permedcoe import FILE_OUT         # To define file type and direction
@@ -42,9 +42,9 @@ def personalize_model_bb_extended(*args, **kwargs):
 # COMMON FOR ALL WORKFLOW MANAGERS #
 ####################################
 
-@Container(engine="SINGULARITY", image=SAMPLE_CONTAINER)
-@Binary(binary="/usr/local/bin/PROFILE_personalize.py")
-@Task(mutations_dataset=FILE_IN, output=DIRECTORY_OUT)
+@container(engine="SINGULARITY", image=SAMPLE_CONTAINER)
+@binary(binary="/usr/local/bin/PROFILE_personalize.py")
+@task(mutations_dataset=FILE_IN, output=DIRECTORY_OUT)
 def personalize_model_task(system_flag="-sy", system="Linux",
                            suffix_flag="-s", suffix="META_mutations_CNA_asMutant",
                            mutations_dataset_flag="-m", mutations_dataset=None,
